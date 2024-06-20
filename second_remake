@@ -1,9 +1,3 @@
-"""
-projekt_2.py: druhý projekt do Engeto Online Python Akademie
-author: Eliska Loup
-email: eliskaloup@outlook.com
-discord: eliskaloup
-"""
 import random
 
 def introduction():
@@ -11,28 +5,47 @@ def introduction():
 separator = "-" * 55
 
 """
-generating a secret 4 digit number, that can not start with 0, but can contain 0.
+Generates a random 4-digit secret number with unique digits and no leading zero.
+
+The function continues to generate random 4-digit numbers until it finds one that:
+    1. Has no repeated digits.
+    2. Does not start with a zero.
+
+Returns:
+    str: A string representing a valid 4-digit secret number.
 """
 def generate_secret_number():
     while True:
         secret_number = str(random.randint(1000, 9999))
         if len(set(secret_number)) == 4 and secret_number[0] != '0':
             return secret_number
-        
 """
-validating if the user's imput is in the games criteria and rules
+Validate a player's 4-digit number.
+
+Args:
+    players_number (str): The number entered by the player.
+
+Returns:
+    bool: True if valid, False otherwise.
+
+Criteria:
+- Must not be empty.
+- Must not start with '0'.
+- Must contain only digits.
+- Must be exactly 4 digits long.
+- Must have all unique digits.
 """
 def number_validation(players_number):
     if players_number == "":
-        print("enter a 4 digit number", separator, sep="\n")
-    elif (str(players_number)[0]) == "0":                                           #word can not start with 0
-        print("number '0' can not be selected as first digit", separator, sep="\n")
-    elif players_number.isdigit() == False:                                         #word can not be a letter
-        print("enter only digits", separator, sep="\n")     
-    elif len(players_number) != 4:                                                  #word must be 4 letters long
-        print("you must enter 4 digit number", separator, sep="\n")
-    elif len(set(players_number)) != 4:                                             #word can not have duplicates
-        print("your number contains two or more same digits", separator, sep="\n")
+        print("Enter a 4 digit number", separator, sep="\n")
+    elif players_number[0] == "0":
+        print("Number '0' can not be selected as first digit", separator, sep="\n")
+    elif players_number.isdigit() == False:
+        print("Enter only digits", separator, sep="\n")     
+    elif len(players_number) != 4:
+        print("You must enter 4 digit number", separator, sep="\n")
+    elif len(set(players_number)) != 4:
+        print("Your number contains two or more same digits", separator, sep="\n")
     else:
         return True
     return False
