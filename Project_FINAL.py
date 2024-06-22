@@ -4,6 +4,7 @@ def introduction():
     print("Hi there!", separator, "I've generated a random 4 digit number for you","Enter four unique numbers that doesn't START with zero","Let's play a bulls and cows game", separator, sep="\n")
 separator = "-" * 55
 
+def generate_secret_number():
 """
 Generates a random 4-digit secret number with unique digits and no leading zero.
 
@@ -14,28 +15,21 @@ The function continues to generate random 4-digit numbers until it finds one tha
 Returns:
     str: A string representing a valid 4-digit secret number.
 """
-def generate_secret_number():
     while True:
         secret_number = str(random.randint(1000, 9999))
         if len(set(secret_number)) == 4 and secret_number[0] != '0':
             return secret_number
-"""
-Validate a player's 4-digit number.
 
-Args:
+def number_validation(players_number):
+    """
+    Validate a player's 4-digit number.
+
+    Args:
     players_number (str): The number entered by the player.
 
-Returns:
+    Returns:
     bool: True if valid, False otherwise.
-
-Criteria:
-- Must not be empty.
-- Must not start with '0'.
-- Must contain only digits.
-- Must be exactly 4 digits long.
-- Must have all unique digits.
-"""
-def number_validation(players_number):
+    """
     if players_number == "":
         print("Enter a 4 digit number", separator, sep="\n")
     elif players_number[0] == "0":
