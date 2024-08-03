@@ -10,7 +10,6 @@ def introduction():
           SEPARATOR, 
           sep="\n")
 
-
 def generate_secret_number():
     while True:
         secret_number = str(random.randint(1000, 9999))
