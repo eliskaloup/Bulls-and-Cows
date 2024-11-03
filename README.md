@@ -1,8 +1,6 @@
 # Game Bulls and Cows
 
 
----------------------------------------------
-
 **Popis projektu**
 
 Program simuluje hru Bulls and Cows. Po vypsání úvodního textu uživatel hádá náhodně vygenerované čtyřciferné číslo. Hru je možné libovolněkrát opakovat. Doplnila jsem možnost počtu pokusů, které si uživatel může sám nastavit a zároveň mu po uhodnutí program napíše, kolik mu zbývá pokusů.
